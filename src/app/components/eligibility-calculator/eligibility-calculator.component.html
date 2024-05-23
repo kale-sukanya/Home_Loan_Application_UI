@@ -1,0 +1,8 @@
+<div class="container">
+    <h2>Loan Eligibility Checker</h2>
+    <form (ngSubmit)="checkEligibility()">
+      <label for="netSalary">Net Monthly Salary:</label>
+      <input type="number" id="netSalary" [(ngModel)]="netMonthlySalary" name="netSalary" required>
+      <button type="submit" class="btn btn-primary">Check Eligibility</button>
+    </form>
+  

@@ -1,0 +1,51 @@
+<div class="outer">
+    <div class="container">
+        <div class="row">
+            <div class="offset-md-2 col-lg-5 col-md-7 offset-md-4 offset-md-3">
+                <div class="panel border bg-white">
+                    <div class="panel-heading">
+                        <h3 class="pt-3 font-weight-bold">
+                            Login
+                        </h3>
+                    </div>
+                    <div class="panel-body p-3">
+                        <form [formGroup]="loginForm" >
+                            <div class="form-group pt-3">
+                                <div class="input-field">
+                                    <input formControlName="EmailId" type="text" placeholder="EmailId">
+                                </div>
+                            </div>
+                            <small *ngIf="loginForm.controls['EmailId'].dirty&&loginForm.hasError('required','EmailId')" class="text-danger">*EmailId is required </small>
+                            <div class="form-group pt-3">
+                                <div class="input-field">
+                                    <input formControlName="Password" [type]="type" placeholder="Password">
+                                    <span (click)="hideShowPass()" class="fa {{eyeIcon}}"></span>
+                                </div>
+                            </div>
+                            
+                            <small *ngIf="loginForm.controls['Password'].dirty&&loginForm.hasError('required','Password')" class="text-danger">*Password is required </small>
+                            
+                            <div class="form-group pt-3">
+                                <div class="input-field">
+                                    <select class="form-select"  name="Role" formControlName="Role"  id="RoleType" >
+                                        <option value="" disabled selected>Select Role</option>
+                                        <option value="Admin">Admin</option>
+                                        <option value="User">User</option>
+                                    </select>
+                                </div>
+                                <small *ngIf="loginForm.controls['Role'].dirty&&loginForm.hasError('required','Role')" class="text-danger">*Role is required </small>
+                            </div>
+                            <div class="form-inline fr mt-2">
+                                <a id="forget" class="fw-light font-weight-bold" [routerLink]="['/forgot-password']">Forget Password?</a>
+                            </div>
+                            
+                            <button (click)="onLogin()" type="submit" class="btn btn-outline-primary btn-block mt-4 w-100">Login</button>
+                            <div class="text-center pt-4 text-muted">Don't have account? <a href="/register" id="forget">Register</a></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+ 

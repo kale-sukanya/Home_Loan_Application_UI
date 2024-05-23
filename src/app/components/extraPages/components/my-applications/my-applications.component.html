@@ -1,0 +1,12 @@
+<div *ngIf="applicationData">
+    <h2>My Applications</h2>
+    <div *ngFor="let loanDetail of applicationData.LoanDetails">
+      <!-- Display loan details here -->
+      <p>{{ loanDetail.ApplicationId }}</p>
+      <p>{{loanDetail.AppliedOn}}</p>
+      <button (click)="viewApplicationDetails(loanDetail.ApplicationId)">View Details</button>
+      <!-- Add more fields as needed -->
+    </div>
+
+  </div>
+  

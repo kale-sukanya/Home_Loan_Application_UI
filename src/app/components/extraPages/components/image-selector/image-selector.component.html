@@ -1,0 +1,89 @@
+<!-- <div class="container mt-4">
+  First Document Upload Section
+  <div class="row align-items-end mb-3">
+    <div class="col-md-6">
+      <div class="input-group mb-3">
+        <input type="file" class="form-control" (change)="onFileUploadChange($event, 1)" id="file1">
+        <label class="input-group-text" for="file1">Choose file</label>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="d-flex align-items-end">
+        <label for="FileName1">File Name</label>
+        <input type="text" class="form-control me-2" id="FileName1" [(ngModel)]="fileName[1]">
+        <button class="btn btn-primary" (click)="uploadImage(1)">Upload Image</button>
+      </div>
+    </div>
+  </div>
+
+  Second Document Upload Section
+  <div class="row align-items-end mb-3">
+    <div class="col-md-6">
+      <div class="input-group mb-3">
+        <input type="file" class="form-control" (change)="onFileUploadChange($event, 2)" id="file2">
+        <label class="input-group-text" for="file2">Choose file</label>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="d-flex align-items-end">
+        <label for="FileName2">File Name</label>
+        <input type="text" class="form-control me-2" id="FileName2" [(ngModel)]="fileName[2]">
+        <button class="btn btn-primary" (click)="uploadImage(2)">Upload Image</button>
+      </div>
+    </div>
+  </div>
+
+  Add more document upload sections as needed
+
+</div> -->
+
+<div class="container mt-4">
+  <!-- VoterId Upload Section -->
+  <div class="row align-items-end mb-3">
+    <div class="col-md-6">
+      <div class="input-group mb-3">
+        <input type="file" class="form-control" (change)="onFileUploadChange($event, 'VoterId')" id="voterIdFile">
+        <label class="input-group-text" for="voterIdFile">Upload VoterId</label>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="d-flex align-items-end">
+        <label for="VoterIdFileName">File Name</label>
+        <input type="text" class="form-control me-2" id="VoterIdFileName" [(ngModel)]="fileName['VoterId']">
+        <button class="btn btn-primary" (click)="uploadImage('VoterId')">Upload</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- SalarySlip Upload Section -->
+  <div class="row align-items-end mb-3">
+    <div class="col-md-6">
+      <div class="input-group mb-3">
+        <input type="file" class="form-control" (change)="onFileUploadChange($event, 'SalarySlip')" id="salarySlipFile">
+        <label class="input-group-text" for="salarySlipFile">Upload Salary Slip</label>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="d-flex align-items-end">
+        <label for="SalarySlipFileName">File Name</label>
+        <input type="text" class="form-control me-2" id="SalarySlipFileName" [(ngModel)]="fileName['SalarySlip']">
+        <button class="btn btn-primary" (click)="uploadImage('SalarySlip')">Upload</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Add more document upload sections as needed -->
+
+</div>
+
+<div class="modal-overlay">
+  <div class="modal">
+      <div class="modal-header">
+          <h2>Submission Status</h2>
+          <span class="close-modal">&times;</span>
+      </div>
+      <div class="modal-body">
+          <p>Form submitted successfully!</p> <!-- Customize this message -->
+      </div>
+  </div>
+</div>

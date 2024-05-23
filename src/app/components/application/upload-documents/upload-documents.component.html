@@ -1,0 +1,92 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 mt-3 text-center">
+      <h3 class="font-weight-bold">Upload Necessary Documents</h3>
+      <p class="text-muted">Please upload the following documents to proceed with your application <br><span class="redText">(File size should not exceed 500kb)</span></p>
+      <p><strong>Application Id: {{ApplicationId}}</strong></p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="panel border bg-white">
+        <div class="panel-body p-3">
+          <div class="row">
+            <div class="col-md-6" style="border-right: 1px solid #ccc;">
+              <label for="pancardFile" class="mb-2">Pancard:<span class="text-danger">*</span></label>
+              <input type="file" class="form-control" id="pancardFile" accept=".pdf" (change)="onFileUploadChange($event, 'Pancard')">
+              <div class="d-flex align-items-center mb-2">
+                <button class="btn btn-primary" style="flex: 0 0 30%;" (click)="uploadDocument('Pancard')">Upload</button>
+              </div>
+            </div>
+        
+            <div class="col-md-6">
+              <label for="AadharCardFile" class="mb-2">Aadhar Card:<span class="text-danger">*</span></label>
+              <input type="file" class="form-control" id="AadharCardFile" accept=".pdf" (change)="onFileUploadChange($event, 'AadharCard')">
+              <div class="d-flex align-items-center mb-2">
+                <button class="btn btn-primary" style="flex: 0 0 30%;" (click)="uploadDocument('AadharCard')">Upload</button>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 right-side">
+      <div class="panel border bg-white">
+        <div class="panel-body p-3">
+          <div class="row">
+
+            <div class="col-md-6" style="border-right: 1px solid #ccc;">
+              <label for="SalarySlipFile" class="mb-2">SalarySlip:<span class="text-danger">*</span></label>
+              <input type="file" class="form-control" id="SalarySlipFile" accept=".pdf" (change)="onFileUploadChange($event, 'SalarySlip')">
+              <div class="d-flex align-items-center mb-2">
+                <button class="btn btn-primary" style="flex: 0 0 30%;" (click)="uploadDocument('SalarySlip')">Upload</button>
+              </div>
+            </div>
+        
+            <div class="col-md-6">
+              <label for="LOAFile" class="mb-2">Letter of Authorization (LOA):<span class="text-danger">*</span></label>
+              <input type="file" class="form-control" id="LOAFile" accept=".pdf" (change)="onFileUploadChange($event, 'LOA')">
+              <div class="d-flex align-items-center mb-2">
+                <button class="btn btn-primary" style="flex: 0 0 30%;" (click)="uploadDocument('LOA')">Upload</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class=" d-flex justify-content-center align-items-center">
+      <div class="panel border bg-white">
+        <div class="panel-body p-3">
+          <div class="row">
+
+            <div class="col-md-6" style="border-right: 1px solid #ccc;">
+              <label for="NOCFile" class="mb-2">No Objection Certificate (NOC) from Builder:<span class="text-danger">*</span></label>
+              <input type="file" class="form-control" id="NOCFile" accept=".pdf" (change)="onFileUploadChange($event, 'NOC')">
+              <div class="d-flex align-items-center mb-2">
+                <button class="btn btn-primary" style="flex: 0 0 30%;" (click)="uploadDocument('NOC')">Upload</button>
+              </div>
+            </div>
+            
+            <div class="col-md-6">
+              <label for="AgreementToSaleFile" class="mb-2">Agreement to Sale:<span class="text-danger">*</span></label>
+              <input type="file" class="form-control" id="AgreementToSaleFile" accept=".pdf" (change)="onFileUploadChange($event, 'AgreementToSale')">
+              <div class="d-flex align-items-center mb-2">
+                <button class="btn btn-primary" style="flex: 0 0 30%;" (click)="uploadDocument('AgreementToSale')">Upload</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row mt-3">
+    <div class="col-md-12 text-center">
+      <button class="btn btn-primary" (click)="onSubmit()">Submit</button> </div>
+      <div *ngIf="!allFilesSelected()" class="text-danger mt-2 text-center">
+        Please select the following file(s): {{ getRemainingFiles().join(', ') }}
+      </div>
+  </div>
+</div>
+

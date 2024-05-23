@@ -1,0 +1,50 @@
+<div class="outer1">
+    <div class="card bg-light">
+        <div class="card-body">
+            <h3 class="card-title font-weight-bold text-center">Managing Loans Made easier</h3>
+            <!-- First row -->
+            <div class="row mt-3">
+                <div class="col-sm-6 mb-3">
+                    <div class="card custom-bg-light-blue card-hover">
+                        <div class="card-body ">
+                            <h5 class="card-title">My Applications</h5>
+                            <button class="btn btn-outline-primary"
+                                [routerLink]="['/user/MyApplications']">Details</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 mb-3">
+                    <div class="card custom-bg-light-blue card-hover">
+                        <div class="card-body">
+                            <h5 class="card-title">Apply Now</h5>
+                            <button class="btn btn-outline-primary btn-sm"
+                                [routerLink]="['/application/loandetails']">Apply</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Second row -->
+            <div class="row">
+                <div class="col-sm-6 mb-3">
+                    <div class="card custom-bg-light-blue card-hover">
+                        <div class="card-body">
+                            <h5 class="card-title">Track Application Status</h5>
+                            <button class="btn btn-outline-primary btn-sm"
+                                [routerLink]="['/user/checkApplicationStatus/']">Track</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 mb-3">
+                    <div class="card custom-bg-light-blue card-hover">
+                        <div class="card-body">
+                            <h5 class="card-title">Check Account Balance</h5>
+                            <button class="btn btn-outline-primary btn-sm" [routerLink]="['/user/checkBalance']">Check
+                                Balance
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

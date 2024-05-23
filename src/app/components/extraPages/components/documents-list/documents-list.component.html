@@ -1,0 +1,26 @@
+<div class="container mt-4">
+  <h1>Documents List</h1>
+  <p *ngIf="loading">Loading...</p>
+  <p *ngIf="errorMessage">{{ errorMessage }}</p>
+  <table class="table table-striped" *ngIf="!loading && !errorMessage">
+    <thead>
+      <tr>
+        <th>File Name</th>
+        <th>Action</th>
+        <th>Date Uploaded</th>
+        <th>Application ID</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let doc of documents">
+        <td>{{ doc.FileName }}</td>
+        <!-- Create a View button -->
+        <td>
+          <button (click)="viewDocument(doc.Url)">View</button>
+        </td>
+        <td>{{ doc.DateUploaded | date: 'yyyy-MM-dd' }}</td>
+        <td>{{ doc.ApplicationId }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

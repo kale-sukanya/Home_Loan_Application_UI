@@ -1,0 +1,145 @@
+<div class="container">
+  <div class="containr2">
+    <div class="details-header mt-3">
+    <h2>
+      Application Details for Application ID: {{ applicationId }}
+    </h2>
+    <h3>Applied On <span class="redText">{{ loanDetails?.AppliedOn | date:'d MMMM yyyy' }}</span></h3>
+  </div>
+</div>
+  
+
+  <div class="row">
+    <!-- Left Column for Loan Details -->
+    <div class="col-md-6">
+      <div class="card mt-4 hover-effect">
+        <div class="card-body">
+          <div *ngIf="loanDetails">
+            <h2 class="card-title">Loan Details</h2>
+            <table class="table-custom ">
+              <tbody> 
+                <tr>
+                  <th scope="row">Property Location:</th>
+                  <td>{{ loanDetails.PropertyLocation }}</td>
+                </tr>
+                <tr>
+                  <th scope="row">Property Name:</th>
+                  <td>{{ loanDetails.PropertyName }}</td>
+                </tr>
+                <tr>
+                  <th scope="row">Estimate Amount:</th>
+                  <td>{{ loanDetails.EstimateAmount }}</td>
+                </tr>
+                <tr>
+                  <th scope="row">Net Salary:</th>
+                  <td>{{ loanDetails.NetSalary }}</td>
+                </tr>
+                <tr>
+                  <th scope="row">Type of Employment:</th>
+                  <td>{{ loanDetails.TypeOfEmployment }}</td>
+                </tr>
+                <tr>
+                  <th scope="row">Retirement Age:</th>
+                  <td>{{ loanDetails.RetirementAge }}</td>
+                </tr>
+                <tr>
+                  <th scope="row">Organization Type:</th>
+                  <td>{{ loanDetails.OrganizationType }}</td>
+                </tr>
+                <tr>
+                  <th scope="row">Employer Name:</th>
+                  <td>{{ loanDetails.EmployerName }}</td>
+                </tr>
+                <tr>
+                  <th scope="row">Loan Amount:</th>
+                  <td>{{ loanDetails.LoanAmount }}</td>
+                </tr>
+                <tr>
+                  <th scope="row">Interest Rate:</th>
+                  <td>{{ loanDetails.InterestRate }}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Right Column for Personal Details -->
+    <div class="col-md-6">
+      <div class="card mt-4 hover-effect">
+        <div class="card-body">
+          <div *ngIf="personalDetails">
+            <h2 class="card-title">Personal Details</h2>
+            <table class="table-custom">
+              <tbody> 
+                <tr>
+                  <th scope="row">First Name:</th>
+                  <td>{{ personalDetails.FirstName }}</td>
+                </tr>
+                <tr>
+                  <th scope="row">Middle Name:</th>
+                  <td>{{ personalDetails.MiddleName }}</td>
+                </tr>
+                <tr>
+                  <th scope="row">Last Name:</th>
+                  <td>{{ personalDetails.LastName }}</td>
+                </tr>
+                <tr>
+                  <th scope="row">Email ID:</th>
+                  <td>{{ personalDetails.EmailId }}</td>
+                </tr>
+                <tr>
+                  <th scope="row">Phone Number:</th>
+                  <td>{{ personalDetails.PhoneNumber }}</td>
+                </tr>
+                <tr>
+                  <th scope="row">Date of Birth:</th>
+                  <td>{{ personalDetails.DOB| date:'d MMMM yyyy'  }}</td>
+                </tr>
+                <tr>
+                  <th scope="row">Gender:</th>
+                  <td>{{ personalDetails.Gender }}</td>
+                </tr>
+                <tr>
+                  <th scope="row">Nationality:</th>
+                  <td>{{ personalDetails.Nationality }}</td>
+                </tr>
+                <tr>
+                  <th scope="row">Aadhar Number:</th>
+                  <td>{{ personalDetails.AadharNo }}</td>
+                </tr>
+                <tr>
+                  <th scope="row">PAN Number:</th>
+                  <td>{{ personalDetails.PanNo }}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container mt-4">
+      <h1>Documents List</h1>
+      <p *ngIf="loading">Loading...</p>
+      <p *ngIf="errorMessage">{{ errorMessage }}</p>
+      <table class="table-custom hover-effect" *ngIf="!loading && !errorMessage">
+        <thead>
+          <tr>
+            <th>File Name</th>
+            <th>Action</th>
+            <th>Date Uploaded</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let doc of documents">
+            <td>{{ doc.FileName }}</td>
+            <td>
+              <button class="btn btn-outline-secondary" (click)="viewDocument(doc.Url)">View</button>
+            </td>
+            <td>{{ doc.DateUploaded | date: 'yyyy-MM-dd' }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

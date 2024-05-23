@@ -1,0 +1,92 @@
+.outer {
+    height: 100vh;
+    background: #ffffff;
+}
+
+.panel-heading {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+#forget {
+    min-width: 100px;
+    margin-left: auto;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+.form-inline label {
+    padding-left: 10px;
+    margin: 0;
+    cursor: pointer;
+}
+
+.btn {
+    margin-top: 10px;
+    /* border-radius: 15px; */
+
+}
+
+.panel {
+    min-height: 100px;
+    box-shadow: 10px 10px 10px #7b8ba6;
+    border-radius: 12px;
+    margin-top: 40px;
+}
+
+.input-field {
+    border-radius: 5px;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    border: 1px solid #ddd;
+}
+
+.input-field.error {
+    border: 1px solid red;
+    color: red;
+}
+
+input[type='text'],
+input[type='password'],
+input[type='number'] {
+    border: none;
+    outline: none;
+    box-shadow: none;
+    width: 100%;
+}
+
+select {
+    border: none;
+    outline: none;
+    box-shadow: none;
+    width: 100%;
+}
+
+.fa-eye-slash.btn {
+    border: none;
+    outline: none;
+    box-shadow: none;
+}
+
+.navbar-text {
+    padding-left: 10px;
+    /* Adjust the padding as needed */
+}
+
+.hover-effect:hover {
+    box-shadow: 0 4px 8px 0 #0a3e4f;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.redText {
+    color: rgb(255, 0, 0); 
+    padding: 2px 4px;
+    text-decoration: underline;
+  }

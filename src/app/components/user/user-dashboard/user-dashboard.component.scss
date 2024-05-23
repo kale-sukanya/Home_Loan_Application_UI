@@ -1,0 +1,47 @@
+// .card {
+//     background-color: #f2f2f2; /* Grey background color */
+// }
+
+// @media (min-width: 768px) {
+//     .mb-3 {
+//         margin-bottom: 0.5rem !important;
+//     }
+// }
+.card {
+    width: 100%; /* Make the card take full width */
+    padding: 20px; /* Add some padding for spacing */
+    // box-shadow: 10px 10px 10px #7b8ba6;
+}
+.card-hover:hover {
+    box-shadow: 10px 10px 10px #7b8ba6; /* Add shadow on hover */
+}
+
+.row {
+    margin-bottom: 20px; /* Add space between rows */
+}
+
+.col-sm-6 {
+    width: 50%; /* Each column takes half of the row width */
+}
+
+.center-text {
+    text-align: center;
+}
+.card-body {
+    padding-bottom: 50px; /* Adjust the value as needed */
+}
+
+
+.custom-bg-light-blue {
+    background-color: #e6f2f7;
+    transition: background-color 0.3s ease;
+}
+
+.custom-bg-light-blue:hover {
+    background-color: #1E0342; /* Light blue color for hover effect */
+    color:#E1F7F5;
+}
+
+.card.bg-light.rounded-3 {
+    min-height: 50vh;
+}

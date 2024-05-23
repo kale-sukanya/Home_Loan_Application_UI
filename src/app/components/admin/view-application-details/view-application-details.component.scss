@@ -1,0 +1,55 @@
+.table-custom {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    border-radius: 5px;
+  }
+  
+  .table-custom th,
+  .table-custom td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .table-custom th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+  }
+  
+  .card-title {
+    font-size: 30px;
+    // font-weight: bold;
+    color: #f8f9fa;
+    background-color: #1E0342;
+    padding: 5px;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .container2 {
+  
+    display: flex; /* Use flexbox for layout */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    // height: 100vh; /* Set height to full viewport height */
+  }
+  
+  .details-header {
+    text-align: center; /* Center text within header */
+  }
+  
+  .details-header h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .details-header h3 {
+    font-size: 18px;
+    color: #666;
+  }
+  
+  

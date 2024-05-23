@@ -1,0 +1,29 @@
+<nav class="custom-navbar navbar navbar-expand-lg custom-bg">
+    <span class="navbar-link">
+        HL Bank
+    </span>
+    <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" routerLink="/">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/eligibility-calculator">Eligibility</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/emi-calculator">EMI</a>
+            </li>
+        </ul>
+    </div>
+    <ng-container *ngIf="user === undefined; else showLogout">
+        <button class="btn btn-outline-primary" [routerLink]="['/login']">Login</button>
+    </ng-container>
+    <ng-template #showLogout>
+        <div class="d-flex align-items-center">
+            <span>Hi, {{user?.email}}</span>
+            <button class="btn btn-outline-primary ms-3" (click)="onLogout()">Logout</button>
+        </div>
+    </ng-template>
+</nav>
+
+

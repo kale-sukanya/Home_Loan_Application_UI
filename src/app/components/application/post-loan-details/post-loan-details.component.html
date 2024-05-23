@@ -1,0 +1,198 @@
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 left-side">
+            <div class="panel border bg-white">
+                <div class="panel-body p-3">
+                    <div class="col-md-12 mt-3">
+                        <h3 class="font-weight-bold">Fill Loan Details</h3>
+                    </div>
+                    <form [formGroup]="loanDetailsForm">
+                        <div class="form-group pt-3">
+                            <div class="input-field">
+                                <label for="ApplicationId" class="col-sm-6 col-form-label">Application Id:</label>
+                                <input formControlName="ApplicationId" id="ApplicationId" type="text"
+                                    placeholder="Application Id" readonly>
+                            </div>
+                        </div>
+                        <small
+                            *ngIf="loanDetailsForm.get('ApplicationId')?.dirty && loanDetailsForm.get('ApplicationId')?.hasError('required')"
+                            class="text-danger">*ApplicationId is required</small>
+                        <div class="form-group pt-3">
+                            <div class="input-field">
+                                <label for="PropertyLocation" class="col-sm-6 col-form-label">Property Location:</label>
+                                <input formControlName="PropertyLocation" id="PropertyLocation" type="text"
+                                    placeholder="Property Location">
+                            </div>
+                        </div>
+                        <small
+                            *ngIf="loanDetailsForm.controls['PropertyLocation'].dirty&&loanDetailsForm.hasError('required','PropertyLocation')"
+                            class="text-danger">*PropertyLocation is required </small>
+                        <div class="form-group pt-3">
+                            <div class="input-field">
+                                <label for="PropertyName" class="col-sm-6 col-form-label">Property Name:</label>
+                                <input formControlName="PropertyName" id="PropertyName" type="text"
+                                    placeholder="Property Name">
+                            </div>
+                        </div>
+                        <small
+                            *ngIf="loanDetailsForm.controls['PropertyName'].dirty&&loanDetailsForm.hasError('required','PropertyName')"
+                            class="text-danger">*PropertyName is required </small>
+                        <div class="form-group pt-3">
+                            <div class="input-field">
+                                <label for="EstimateAmount" class="col-sm-6 col-form-label">Estimate Amount:</label>
+                                <input formControlName="EstimateAmount" id="EstimateAmount" type="text"
+                                    placeholder="Estimate Amount">
+
+                            </div>
+                            <div
+                                *ngIf="loanDetailsForm.controls['EstimateAmount'].errors && (loanDetailsForm.controls['EstimateAmount'].dirty || loanDetailsForm.controls['EstimateAmount'].touched)">
+                                <div *ngIf="loanDetailsForm.controls['EstimateAmount'].hasError('pattern')"
+                                    class="text-danger">
+                                    *Estimate amount cannot be less than 10,000.
+                                </div>
+                            </div>
+                        </div>
+                        <small
+                            *ngIf="loanDetailsForm.controls['EstimateAmount'].dirty&&loanDetailsForm.hasError('required','EstimateAmount')"
+                            class="text-danger">*EstimateAmount is required </small>
+                        <div class="form-group pt-3">
+                            <div class="input-field">
+                                <label for="TypeOfEmployment" class="col-sm-6 col-form-label">Type Of
+                                    Employment:</label>
+                                <input formControlName="TypeOfEmployment" id="TypeOfEmployment" type="text"
+                                    placeholder="Type Of Employment">
+                            </div>
+                        </div>
+                        <small
+                            *ngIf="loanDetailsForm.controls['TypeOfEmployment'].dirty&&loanDetailsForm.hasError('required','TypeOfEmployment')"
+                            class="text-danger">*TypeOfEmployment is required </small>
+                        <div class="form-group pt-3">
+                            <div class="input-field">
+                                <label for="RetirementAge" class="col-sm-6 col-form-label">Retirement Age:</label>
+                                <input formControlName="RetirementAge" id="RetirementAge" type="text"
+                                    placeholder="Retirement Age">
+                            </div>
+                            <div *ngIf="loanDetailsForm.get('RetirementAge')?.hasError('minRetirementAge') && loanDetailsForm.get('RetirementAge')?.dirty"
+                            class="text-danger">
+                                *Retirement Age should not be less than 60
+                            </div>
+                        </div>
+                        <small
+                            *ngIf="loanDetailsForm.controls['RetirementAge'].dirty&&loanDetailsForm.hasError('required','RetirementAge')"
+                            class="text-danger">*RetirementAge is required </small>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 right-side">
+            <!-- Placeholder for the second part of the page -->
+            <div class="panel border bg-white">
+                <div class="panel-body p-3">
+                    <form [formGroup]="loanDetailsForm">
+                        <div class="form-group pt-3">
+                            <div class="input-field">
+                                <label for="OrganizationType" class="col-sm-6 col-form-label">Organization Type:</label>
+                                <input formControlName="OrganizationType" id="OrganizationType" type="text"
+                                    placeholder="Organization Type">
+                            </div>
+                        </div>
+                        <small
+                            *ngIf="loanDetailsForm.controls['OrganizationType'].dirty&&loanDetailsForm.hasError('required','OrganizationType')"
+                            class="text-danger">*OrganizationType is required </small>
+                        <div class="form-group pt-3">
+                            <div class="input-field">
+                                <label for="EmployerName" class="col-sm-6 col-form-label">Employer Name:</label>
+                                <input formControlName="EmployerName" id="EmployerName" type="text"
+                                    placeholder="Employer Name">
+                            </div>
+                        </div>
+                        <small
+                            *ngIf="loanDetailsForm.controls['EmployerName'].dirty&&loanDetailsForm.hasError('required','EmployerName')"
+                            class="text-danger">*EmployerName is required </small>
+                        <div class="form-group pt-3">
+                            <div class="input-field">
+                                <label for="NetSalary" class="col-sm-6 col-form-label">Net Salary:</label>
+                                <input formControlName="NetSalary" id="NetSalary" type="text" placeholder="Net Salary">
+                            </div>
+                            <div
+                                *ngIf="loanDetailsForm.controls['NetSalary'].errors && (loanDetailsForm.controls['NetSalary'].dirty || loanDetailsForm.controls['NetSalary'].touched)">
+                                <div *ngIf="loanDetailsForm.controls['NetSalary'].hasError('pattern')"
+                                    class="text-danger">
+                                    *Net Salary cannot be less than 10,000.
+                                </div>
+                            </div>
+                        </div>
+                        <small
+                            *ngIf="loanDetailsForm.controls['NetSalary'].dirty&&loanDetailsForm.hasError('required','NetSalary')"
+                            class="text-danger">*NetSalary is required </small>
+                        <div class="form-group pt-3">
+                            <div class="input-field">
+                                <label for="MaxLoanAmountGrantable" class="col-sm-6 col-form-label">Max Loan Amount
+                                    Grantable:</label>
+                                <input formControlName="MaxLoanAmountGrantable" id="MaxLoanAmountGrantable"
+                                    type="number" placeholder="Max Loan Amount Grantable" [value]="maxLoanAmount"
+                                    readonly>
+                            </div>
+                        </div>
+                        <div class="form-group pt-3">
+                            <div class="input-field">
+                                <label for="InterestRate" class="col-sm-6 col-form-label">Interest Rate:</label>
+                                <input formControlName="InterestRate" type="text" placeholder="Interest Rate" readonly>
+                            </div>
+                        </div>
+                        <small
+                            *ngIf="loanDetailsForm.controls['InterestRate'].dirty&&loanDetailsForm.hasError('required','InterestRate')"
+                            class="text-danger">*InterestRate is required </small>
+                        <div class="form-group pt-3">
+                            <div class="input-field">
+                                <label for="LoanAmount" class="col-sm-6 col-form-label">Loan Amount:</label>
+                                <input formControlName="LoanAmount" id="LoanAmount" type="text"
+                                    placeholder="Loan Amount">
+                            </div>
+
+                            <div *ngIf="loanDetailsForm.get('LoanAmount')?.hasError('maxLoanExceeded') && loanDetailsForm.get('LoanAmount')?.dirty"
+                                class="text-danger">
+                                *Loan Amount should not exceed {{ maxLoanAmount }}
+                            </div>
+                            <div
+                                *ngIf="loanDetailsForm.controls['LoanAmount'].errors && (loanDetailsForm.controls['LoanAmount'].dirty || loanDetailsForm.controls['LoanAmount'].touched)">
+                                <div *ngIf="loanDetailsForm.controls['LoanAmount'].hasError('pattern')"
+                                    class="text-danger">
+                                    *Loan Amount cannot be less than 10,000.
+                                </div>
+                            </div>
+                        </div>
+                        <small
+                            *ngIf="loanDetailsForm.controls['LoanAmount'].dirty&&loanDetailsForm.hasError('required','LoanAmount')"
+                            class="text-danger">*LoanAmount is required </small>
+                        <div class="form-group pt-3">
+                            <div class="input-field">
+                                <label for="Tenure" class="col-sm-6 col-form-label">Tenure:</label>
+                                <input formControlName="Tenure" id="Tenure" type="text" placeholder="Tenure">
+                            </div>
+
+                            <div
+                                *ngIf="loanDetailsForm.controls['Tenure'].errors && (loanDetailsForm.controls['Tenure'].dirty || loanDetailsForm.controls['Tenure'].touched)">
+                                <div *ngIf="loanDetailsForm.controls['Tenure'].hasError('pattern')" class="text-danger">
+                                    *Tenure cannot be 0.
+                                </div>
+                            </div>
+                        </div>
+
+                        <small
+                            *ngIf="loanDetailsForm.controls['Tenure'].dirty&&loanDetailsForm.hasError('required','Tenure')"
+                            class="text-danger">*Tenure is required </small>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Common Submit Button -->
+    <div class="row mt-4">
+        <div class="col-md-12 text-center">
+            <button (click)="onSubmit()" type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,16 @@
+<div class="card-container">
+  <h2>EMI Calculator</h2>
+
+  <form (ngSubmit)="calculateEMI()">
+    <label for="loanAmount">Loan Amount:</label>
+    <input type="number" id="loanAmount" [(ngModel)]="loanAmount" name="loanAmount" required class="input-field">
+
+    <label for="InterestRate">Loan Interest Rate:</label>
+    <input type="number" id="InterestRate" name="InterestRate" [(ngModel)]="interestRate" class="input-field" readonly>
+
+    <label for="loanTenure">Loan Tenure (months):</label>
+    <input type="number" id="loanTenure" [(ngModel)]="loanTenureInMonths" name="loanTenure" required class="input-field">
+
+    <button type="submit" class="btn btn-primary">Calculate EMI</button>
+  </form>
+</div>

@@ -1,0 +1,171 @@
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 mt-3 text-left">
+      <h3 class="font-weight-bold">Fill Personal Details</h3>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6 left-side">
+      <div class="panel border bg-white">
+        <div class="panel-body p-3">
+          <form [formGroup]="personalDetailsForm">
+            <div class="form-group pt-3">
+              <div class="input-field">
+                <label for="ApplicationId" class="col-sm-6 col-form-label">Application Id:</label>
+                <input formControlName="ApplicationId" id="ApplicationId" type="text" class="form-control"
+                  placeholder="Application Id" readonly>
+              </div>
+            </div>
+
+            <div class="form-group pt-3">
+              <div class="input-field">
+                <label for="firstName" class="col-sm-6 col-form-label">First Name:</label>
+                <input formControlName="FirstName" id="firstName" type="text" class="form-control"
+                  placeholder="First Name">
+              </div>
+            </div>
+            <div *ngIf="personalDetailsForm.get('FirstName')!.invalid && personalDetailsForm.get('FirstName')!.touched"
+              class="text-danger">
+              First name is required
+            </div>
+            <div class="form-group pt-3">
+              <div class="input-field">
+                <label for="middleName" class="col-sm-6 col-form-label">Middle Name:</label>
+                <input formControlName="MiddleName" id="middleName" type="text" class="form-control"
+                  placeholder="Middle Name">
+              </div>
+            </div>
+            <div
+              *ngIf="personalDetailsForm.get('MiddleName')!.invalid && personalDetailsForm.get('MiddleName')!.touched"
+              class="text-danger">
+              Middle name is required
+            </div>
+            <div class="form-group pt-3">
+              <div class="input-field">
+                <label for="lastName" class="col-sm-6 col-form-label">Last Name:</label>
+                <input formControlName="LastName" id="lastName" type="text" class="form-control"
+                  placeholder="Last Name">
+              </div>
+              <div *ngIf="personalDetailsForm.get('LastName')!.invalid && personalDetailsForm.get('LastName')!.touched"
+                class="text-danger">
+                Last name is required
+              </div>
+
+              <div class="form-group pt-3">
+                <div class="input-field">
+                  <label for="email" class="col-sm-6 col-form-label">Email:</label>
+                  <input formControlName="EmailId" id="email" type="email" class="form-control" placeholder="Email" readonly>
+                </div>
+              </div>
+              <div *ngIf="personalDetailsForm.get('EmailId')!.invalid && personalDetailsForm.get('EmailId')!.touched"
+                class="text-danger">
+                <div *ngIf="personalDetailsForm.get('EmailId')!.hasError('required')">Email is required</div>
+                <div *ngIf="personalDetailsForm.get('EmailId')!.hasError('email')">Invalid email address</div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 right-side">
+      <div class="panel border bg-white">
+        <div class="panel-body p-3">
+          <form [formGroup]="personalDetailsForm">
+            <div class="form-group pt-3">
+
+              <div class="input-field">
+                <label for="phoneNumber" class="col-sm-6 col-form-label">Phone Number:</label>
+                <input formControlName="PhoneNumber" id="phoneNumber" type="tel" class="form-control"
+                  placeholder="Phone Number">
+              </div>
+            </div>
+            <div
+              *ngIf="personalDetailsForm.controls['PhoneNumber'].errors && (personalDetailsForm.controls['PhoneNumber'].dirty || personalDetailsForm.controls['PhoneNumber'].touched)">
+              <div *ngIf="personalDetailsForm.controls['PhoneNumber'].hasError('pattern')" class="text-danger">
+                *Phone Number must be exactly 10 digits.
+              </div>
+            </div>
+            <small
+              *ngIf="personalDetailsForm.controls['PhoneNumber'].dirty&&personalDetailsForm.hasError('required','PhoneNumber')"
+              class="text-danger">*PhoneNumber is required </small>
+            <div class="form-group pt-3">
+              <div class="input-field">
+                <label for="dob" class="col-sm-6 col-form-label">Date of Birth:</label>
+                <input formControlName="DOB" id="dob" type="date" class="form-control">
+              </div>
+            </div>
+            <div *ngIf="personalDetailsForm.get('DOB')!.invalid && personalDetailsForm.get('DOB')!.touched"
+              class="text-danger">
+              Date of Birth is required
+            </div>
+
+            <div class="form-group pt-3">
+              <div class="input-field">
+                <label for="gender" class="col-sm-6 col-form-label">Gender:</label>
+                <select formControlName="Gender" id="gender" class="form-control">
+                  <option value="" disabled selected>Select Gender</option>
+                  <option value="Male">Male</option>
+                  <option value="Female">Female</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+            </div>
+            <div *ngIf="personalDetailsForm.get('Gender')!.invalid && personalDetailsForm.get('Gender')!.touched"
+              class="text-danger">
+              Gender is required
+            </div>
+
+            <div class="form-group pt-3">
+              <div class="input-field">
+                <label for="nationality" class="col-sm-6 col-form-label">Nationality:</label>
+                <input formControlName="Nationality" id="nationality" type="text" class="form-control"
+                  placeholder="Nationality">
+              </div>
+              <div
+                *ngIf="personalDetailsForm.get('Nationality')!.invalid && personalDetailsForm.get('Nationality')!.touched"
+                class="text-danger">
+                Nationality is required
+              </div>
+
+              <div class="form-group pt-3">
+                <div class="input-field">
+                  <label for="aadhar" class="col-sm-6 col-form-label">Aadhar Number:</label>
+                  <input formControlName="AadharNo" id="aadhar" type="text" class="form-control"
+                    placeholder="Aadhar Number">
+                </div>
+                <div
+                  *ngIf="personalDetailsForm.get('AadharNo')!.invalid && personalDetailsForm.get('AadharNo')!.touched"
+                  class="text-danger">
+                  <div *ngIf="personalDetailsForm.get('AadharNo')!.hasError('required')">Aadhar number is required</div>
+                  <div *ngIf="personalDetailsForm.get('AadharNo')!.hasError('pattern')">Aadhar Number must be exactly 12
+                    digits</div>
+                </div>
+              </div>
+
+              <div class="form-group pt-3">
+                <div class="input-field">
+                  <label for="pan" class="col-sm-6 col-form-label">PAN Number:</label>
+                  <input formControlName="PanNo" id="pan" type="text" class="form-control" placeholder="PAN Number">
+                </div>
+              </div>
+              <div *ngIf="personalDetailsForm.get('PanNo')!.invalid && personalDetailsForm.get('PanNo')!.touched"
+                class="text-danger">
+                <div *ngIf="personalDetailsForm.get('PanNo')!.hasError('required')">PAN number is required</div>
+                <div *ngIf="personalDetailsForm.get('PanNo')!.hasError('pattern')">
+                  PAN Number should be in the format: ABCDE1234F</div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Common Submit Button -->
+  <div class="row mt-4">
+    <div class="col-md-12 text-center">
+      <button (click)="onSubmit()" type="submit" class="btn btn-primary">Submit</button>
+    </div>
+  </div>
+</div>

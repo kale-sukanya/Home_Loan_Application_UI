@@ -1,0 +1,35 @@
+.table-custom {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+  
+  .table-custom th,
+  .table-custom td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .table-custom th {
+    background-color: #1E0342;;
+    font-weight: bold;
+    
+    color: #fff;
+  }
+
+  .details-button:hover {
+    background-color: #45a049;
+}
+
+.details-button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+
+  

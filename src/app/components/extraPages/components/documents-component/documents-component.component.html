@@ -1,0 +1,96 @@
+<p>documents-component works!</p>
+<div class="container mt-5">
+    <div class="row">
+        
+        <!-- Staff Report Card -->
+        <div class="col-md-6">
+            <div class="card floating-card hover-effect d-flex flex-column h-100">
+                <div class="card-body">
+                    <!-- Staff Report -->
+                    <table *ngIf="personalDetails" class="table" style="background-color: #157A6E;">
+                        <thead>
+                            <tr>
+                                <th colspan="2" class="card-title">Personal Information</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Staff ID:</strong></td>
+                                <td>{{ personalDetails.ApplicationId }}</td>
+                            </tr>
+                            <tr>
+                                <td><strong>First Name:</strong></td>
+                                <td>{{ personalDetails.FirstName }}</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Last Name:</strong></td>
+                                <td>{{ personalDetails.LastName }}</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Position:</strong></td>
+                                <td>{{ personalDetails.AadharNo }}</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Salary:</strong></td>
+                                <td>{{ personalDetails.PanNo }}</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Address:</strong></td>
+                                <td>{{ personalDetails.EmailId }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div *ngIf="!personalDetails" class="flex-grow-1 d-flex justify-content-center align-items-center">
+                        <p class="card-text">No staff information available.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+ 
+        <!-- User Report Card -->
+        <!-- <div class="col-md-6">
+            <div class="card floating-card hover-effect d-flex flex-column h-100">
+                <div class="card-body">
+                    User Report
+                    <table *ngIf="userbyIdObj" class="table">
+                        <thead>
+                            <tr>
+                                <th colspan="2" class="card-title">Credentials of Staff</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>User ID:</strong></td>
+                                <td>{{ userbyIdObj.UserId }}</td>
+                            </tr>
+                            <tr>
+                                <td><strong>First Name:</strong></td>
+                                <td>{{ userbyIdObj.Username }}</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Last Name:</strong></td>
+                                <td>{{ userbyIdObj.Password }}</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Type:</strong></td>
+                                <td>{{ userbyIdObj.UserType }}</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Email Address:</strong></td>
+                                <td>{{ userbyIdObj.EmailAddress }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div *ngIf="!userbyIdObj" class="flex-grow-1 d-flex justify-content-center align-items-center">
+                        <p class="card-text">No user information available.</p>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+    </div>
+</div>
+<form (ngSubmit)="onSubmit()" class="user-id-form">
+    <label for="userId">Application ID:</label>
+    <input type="text" id="userId" name="userId" [(ngModel)]="userIdInput" required class="user-id-input">
+    <button type="submit" class="get-loan-details-button">Submit</button>
+  </form>

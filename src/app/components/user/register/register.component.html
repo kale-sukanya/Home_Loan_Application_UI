@@ -1,0 +1,82 @@
+<div class="outer">
+    <div class="container">
+        <div class="row">
+            <div class="offset-md-2 col-lg-5 col-md-7 offset-lg-4 offset-md-3">
+                <div class="panel border bg-white">
+                    <div class="panel-heading">
+                        <h3 class="pt-3 font-weight-bold">Register</h3>
+                    </div>
+                    <div class="panel-body p-3">
+                        <form [formGroup]="signUpForm">
+
+                            <div class="form-group pt-3">
+                                <div class="input-field">
+                                    <input formControlName="EmailId" type="text" placeholder="Email">
+                                </div>
+                            </div>
+                            <small
+                                *ngIf="signUpForm.get('EmailId')?.dirty && signUpForm.get('EmailId')?.hasError('required')"
+                                class="text-danger">*Email is required</small>
+                            <small
+                                *ngIf="signUpForm.get('EmailId')?.dirty && signUpForm.get('EmailId')?.hasError('email')"
+                                class="text-danger">*Invalid email format. Should be emaail@example.com</small>
+                            <div class="form-group pt-3">
+                                <div class="input-field">
+                                    <input formControlName="PhoneNumber" type="text" placeholder="Phone Number">
+                                </div>
+                            </div>
+                            <small
+                                *ngIf="signUpForm.controls['PhoneNumber'].dirty&&signUpForm.hasError('required','PhoneNumber')"
+                                class="text-danger">*Phone Number is required </small>
+                            <small
+                                *ngIf="signUpForm.controls['PhoneNumber'].dirty&&signUpForm.hasError('pattern','PhoneNumber')"
+                                class="text-danger">*Phone Number must be exactly 10 digits. </small>
+                            <div class="form-group pt-3">
+                                <div class="input-field">
+                                    <input formControlName="Password" [type]="type" placeholder="Password">
+                                    <span (click)="togglePasswordVisibility()" class="fa {{eyeIcon}}"></span>
+                                </div>
+                            </div>
+                            <div
+                                *ngIf="signUpForm.controls['Password'].errors && (signUpForm.controls['Password'].dirty || signUpForm.controls['Password'].touched)">
+                                <div *ngIf="signUpForm.controls['Password'].hasError('pattern')" class="text-danger">
+                                    *The Password must be at least 8 characters long, have 1 uppercase, 1 lowercase, 1
+                                    digit, and 1 special character.
+                                </div>
+                            </div>
+                            <small
+                                *ngIf="signUpForm.controls['Password'].dirty&&signUpForm.hasError('required','Password')"
+                                class="text-danger">*Password is required </small>
+                            <div class="form-group pt-3">
+                                <div class="input-field">
+                                    <input formControlName="ConfirmPass" [type]="type" placeholder="Confirm Password">
+                                    <span (click)="togglePasswordVisibility()" class="fa {{eyeIcon}}"></span>
+                                </div>
+                            </div>
+                        
+                            <div *ngIf="signUpForm.hasError('passwordMismatch')" class="text-danger">Passwords do not
+                                match.
+                            </div>
+                            <small
+                                *ngIf="signUpForm.controls['ConfirmPass'].dirty&&signUpForm.hasError('required','ConfirmPass')"
+                                class="text-danger">*Confirm Password is required
+                            </small>
+                            <div class="form-group pt-3">
+                                <div class="input-field">
+                                    <input formControlName="Role" type="text" [value]="'User'" readonly>
+                                </div>
+                            </div>
+                            <small *ngIf="signUpForm.controls['Role'].dirty&&signUpForm.hasError('required','Role')"
+                                class="text-danger">*Role is required </small>
+                            <button (click)="onSubmit()" type="submit"
+                                class="btn btn-outline-primary btn-block mt-4 w-100">Register</button>
+                            <div class="text-center pt-4 text-muted">Already have an account? <a href="/login"
+                                    id="forget">Login</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

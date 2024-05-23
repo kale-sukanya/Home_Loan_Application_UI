@@ -1,0 +1,23 @@
+<div class="my-applications-container" *ngIf="applicationData">
+    <div class="container mt-4">
+      <h2 class="title">My Applications</h2>
+      <table class="table-custom">
+        <thead>
+          <tr>
+            <th>Application ID</th>
+            <th>Applied On</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody *ngIf="applicationData.LoanDetails.length > 0">
+          <tr *ngFor="let loanDetail of applicationData.LoanDetails" class="application-row">
+            <td>{{ loanDetail.ApplicationId }}</td>
+            <td>{{ loanDetail?.AppliedOn | date:'d MMMM yyyy' }}</td>
+            <td><button (click)="viewApplicationDetails(loanDetail.ApplicationId)" class="btn btn-outline-primary">View Details</button></td>
+          </tr>
+        </tbody>
+      </table>
+      <p *ngIf="applicationData.LoanDetails.length === 0" class="no-applications-message">No applications found.</p>
+    </div>
+  </div>
+  
